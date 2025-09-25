@@ -1,1 +1,2 @@
-# Shooter-2D
+# shooter
+2D Game
