@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class levelComplete : MonoBehaviour
 {
@@ -15,6 +16,16 @@ public class levelComplete : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
-    
-        
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f; // Game resume
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1f; // Game resume
+        SceneManager.LoadScene("MainMenu"); // yahan apna main menu scene ka naam likho
+    }
+
 }
