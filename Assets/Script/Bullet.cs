@@ -10,24 +10,23 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        rb.velocity = transform.right * Speed;   // bullet ko forward move karo
-        Destroy(gameObject, 1f);
+        rb.velocity = transform.right * Speed;  
     }
 
     void OnTriggerEnter2D(Collider2D hitinfo)
     {
         if (hitinfo.CompareTag("Coin"))
         {
-            return; // kuch mat karo, bullet chalti rahegi
+            return;
         }
-        // Agar enemy hit ho
+      
         EnemyHealth enemy = hitinfo.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
-            enemy.Damage(50); // enemy ki health reduce karo
+            enemy.Damage(50); 
         }
 
-        // Har haal me bullet destroy ho jaye
+       
         Destroy(gameObject);
     }
 

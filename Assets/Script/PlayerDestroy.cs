@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
    // public GameObject enemy;
     public Image panel;
     private void OnTriggerEnter2D(Collider2D other)

@@ -18,14 +18,14 @@ public class levelComplete : MonoBehaviour
     }
     public void RestartLevel()
     {
-        Time.timeScale = 1f; // Game resume
+        Time.timeScale = 1f; 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void MainMenu()
     {
-        Time.timeScale = 1f; // Game resume
-        SceneManager.LoadScene("MainMenu"); // yahan apna main menu scene ka naam likho
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

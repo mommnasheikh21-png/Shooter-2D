@@ -9,8 +9,8 @@ public class EnemyHealth : MonoBehaviour
 {
 
     public int Health = 100;
-    public GameObject DeathEffect;     // death animation ya particle prefab
-    public float effectLifeTime = 1f;  // kitni der effect screen pe rahe
+    public GameObject DeathEffect;     
+    public float effectLifeTime = 1f;  
 
     public void Damage(int value)
     {
@@ -26,14 +26,14 @@ public class EnemyHealth : MonoBehaviour
     {
         if (DeathEffect != null)
         {
-            // Effect ko instantiate karo
+           
             GameObject effect = Instantiate(DeathEffect, transform.position, Quaternion.identity);
 
-            // effect ko destroy kar do thodi der baad (short time ke liye dikhega)
+           
             Destroy(effect, effectLifeTime);
         }
 
-        // Enemy ko turant destroy kar do
+       
         Destroy(gameObject);
     }
 }

@@ -16,8 +16,7 @@ public class PlayerMovement : MonoBehaviour
     
 
     [Header("Gun Settings")]
-    public Transform firePoint; // <-- yahan apna child GameObject (jaise FirePoint) assign karo
-
+    public Transform firePoint; 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,11 +31,11 @@ public class PlayerMovement : MonoBehaviour
     {
         float MoveX = Input.GetAxisRaw("Horizontal");
 
-        // Movement
+       
         rb.velocity = new Vector2(MoveX * RunSpeed, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(MoveX));
 
-        // Jump
+       
         if (Input.GetKeyDown(KeyCode.UpArrow) && IsGround)
         {
             animator.SetBool("jump", true);
@@ -44,16 +43,16 @@ public class PlayerMovement : MonoBehaviour
             IsGround = false;
         }
 
-        // Flip player & firePoint
-        if (MoveX > 0) // Right
+       
+        if (MoveX > 0) 
         {
             transform.localScale = new Vector3(1, 1, 1);
-            firePoint.localRotation = Quaternion.Euler(0, 0, 0); // right side
+            firePoint.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (MoveX < 0) // Left
+        else if (MoveX < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
-            firePoint.localRotation = Quaternion.Euler(0, 180, 0); // left side
+            firePoint.localRotation = Quaternion.Euler(0, 180, 0); 
         }
     }
 
